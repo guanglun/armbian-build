@@ -559,10 +559,10 @@ compilation_prepare()
 
 		fetch_from_repo "https://github.com/lwfinger/rtl8723ds" "rtl8723ds" "${rtl8723dsver}" "yes"
 		cd "$kerneldir" || exit
-		# rm -rf "$kerneldir/drivers/net/wireless/rtl8723ds"
-		# mkdir -p "$kerneldir/drivers/net/wireless/rtl8723ds/"
-		# cp -R "${SRC}/cache/sources/rtl8723ds/${rtl8723dsver#*:}"/{core,hal,include,os_dep,platform} \
-		# "$kerneldir/drivers/net/wireless/rtl8723ds"
+		rm -rf "$kerneldir/drivers/net/wireless/rtl8723ds"
+		mkdir -p "$kerneldir/drivers/net/wireless/rtl8723ds/"
+		cp -R "${SRC}/cache/sources/rtl8723ds/${rtl8723dsver#*:}"/{core,hal,include,os_dep,platform} \
+		"$kerneldir/drivers/net/wireless/rtl8723ds"
 
 		# Makefile
 		cp "${SRC}/cache/sources/rtl8723ds/${rtl8723dsver#*:}/Makefile" \
